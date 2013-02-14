@@ -1,7 +1,7 @@
 {
-  "name":        "hosted-hubot",
+  "name":        "MinnBot",
   "version":     "2.2.0",
-  "author":      "GitHub Inc.",
+  "author":      "MinnPost",
   "keywords":    "github hubot campfire bot",
   "description": "A simple helpful Robot for your Company",
   "licenses":     [{
@@ -11,7 +11,7 @@
 
   "repository" : {
     "type" : "git",
-    "url" : "http://github.com/github/hubot.git"
+    "url" : "http://github.com/minnpost/MinnPost.git"
   },
 
   "dependencies": {
