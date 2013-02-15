@@ -1,3 +1,8 @@
+# MinnBot
+
+Deployed on Heroku (with Redis) via these [instructions](https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Heroku).
+
+
 # Hubot
 
 This is a version of GitHub's Campfire bot, hubot. He's pretty cool.

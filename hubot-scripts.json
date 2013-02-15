@@ -1,1 +1,14 @@
-["redis-brain.coffee", "tweet.coffee", "shipit.coffee"]
+[
+  "redis-brain.coffee",
+  "tweet.coffee", 
+  "shipit.coffee", 
+  "animal.coffee", 
+  "ascii.coffee", 
+  "beerme.coffee", 
+  "botsnack.coffee", 
+  "commandlinefu.coffee",
+  "github-commits.coffee",
+  "isup.coffee",
+  "octocat.coffee",
+  "xkcd.coffee"
+]
