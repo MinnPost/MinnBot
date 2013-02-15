@@ -1,6 +1,8 @@
 # MinnBot
 
-Deployed on Heroku (with Redis) via these [instructions](https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Heroku).
+Deployed on Heroku (with Redis) via these [instructions](https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Heroku) for Campfire.
+
+It is not clear that you have to create an account for the MinnBot (Hubot) in campfire.  So, make sure that happens.
 
 
 # Hubot
