@@ -17,9 +17,9 @@ apikey = '1e1c9b31bf15440aacafe4125f221bf2'
 state = 'MN'
 
 module.exports = (robot) ->
+
+  #look up legislator by district -- return name, title party
   robot.respond /who represents (.+)\?/i, (msg) ->
-      #state = 'MN'
-      #apikey = '1e1c9b31bf15440aacafe4125f221bf2'
       district = msg.match[1]
       msg
       .http("http://openstates.org/api/v1/legislators/")
@@ -33,4 +33,44 @@ module.exports = (robot) ->
         if content[0].chamber == 'upper'
           title = 'Sen.'
         msg.send "#{title} #{content[0].full_name} (#{content[0].party})"
-  	
+
+  #look up a legislators district - return district  	
+  robot.respond /who does (.+)represent\?/i, (msg) ->
+    legfull = msg.match[1].split " "
+    first = legfull[0]
+    last = legfull.pop()
+    msg
+      .http("http://openstates.org/api/v1/legislators/")
+      .query(state: state,apikey: apikey,first_name:first,last_name:last)
+      .get() (err, res, body) ->    
+        if err
+          msg.send "OpenStates says #{err}"
+        content = JSON.parse(body)
+        msg.send content[0].district
+        
+  #look up bill status by bill number
+  robot.respond /bill status (.+)/i, (msg) ->
+    bill = msg.match[1]
+    d = new Date()
+    n = d.getFullYear();
+    if n % 2 == 0
+      session = (n-1) + "-" + n
+    else
+      session = n + "-" + (n+1)
+    url = "http://openstates.org/api/v1/bills/" + state + "\/" + session + "\/" + bill + "\/?apikey=" + apikey
+    #msg.send url
+    msg
+      .http(url)
+      #.query(apikey: apikey)
+      .get() (err, res, body) ->    
+        if err
+          msg.send "OpenStates says #{err}"
+        content = JSON.parse(body)
+        actions = content.actions
+        lastaction = actions.pop()
+        action = lastaction.action
+        actiondate = lastaction.date
+        title = content.title
+        msg.send "#{action} on #{actiondate} (#{title})"
+        
+  #look up bill description
