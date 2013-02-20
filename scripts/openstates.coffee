@@ -50,7 +50,7 @@ module.exports = (robot) ->
         
   #look up bill status by bill number
   robot.respond /bill status (.+)/i, (msg) ->
-    bill = msg.match[1]
+    bill = msg.match[1].toUpperCase()
     d = new Date()
     n = d.getFullYear();
     if n % 2 == 0
@@ -58,10 +58,8 @@ module.exports = (robot) ->
     else
       session = n + "-" + (n+1)
     url = "http://openstates.org/api/v1/bills/" + state + "\/" + session + "\/" + bill + "\/?apikey=" + apikey
-    #msg.send url
     msg
       .http(url)
-      #.query(apikey: apikey)
       .get() (err, res, body) ->    
         if err
           msg.send "OpenStates says #{err}"
@@ -72,5 +70,3 @@ module.exports = (robot) ->
         actiondate = lastaction.date
         title = content.title
         msg.send "#{action} on #{actiondate} (#{title})"
-        
-  #look up bill description
