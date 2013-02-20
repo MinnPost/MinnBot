@@ -9,5 +9,6 @@
   "commandlinefu.coffee",
   "github-commits.coffee",
   "isup.coffee",
-  "xkcd.coffee"
+  "xkcd.coffee",
+  "polite.coffee"
 ]
