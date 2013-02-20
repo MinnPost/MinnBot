@@ -34,7 +34,8 @@ module.exports = (robot) ->
           title = 'Rep.'
         if content[0].chamber == 'upper'
           title = 'Sen.'
-        msg.send "#{content[0].photo_url} #{title} #{content[0].full_name} (#{content[0].party})"
+        msg.send content[0].photo_url
+        msg.send "#{title} #{content[0].full_name} (#{content[0].party})"
 
   #look up a legislators district - return district  	
   robot.respond /who does (.+)represent\?/i, (msg) ->
