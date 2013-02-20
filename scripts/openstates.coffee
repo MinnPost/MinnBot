@@ -10,11 +10,13 @@
 #
 #Note: currently doesn't work!
 # Commands:
-#
+#   who represents <district>? - returns legislator representing given district number
+#   who does <firstname lastname> represent? - returns district represented by legislator
+#   bill status <bill_no> returns last action, date, and title of a given bill (space between SF/HF and bill number)
 # Author:
 #   tom
-apikey = '1e1c9b31bf15440aacafe4125f221bf2'
-state = 'MN'
+apikey = process.env.SUNLIGHT_API_KEY
+state = process.env.HUBOT_MY_STATE
 
 module.exports = (robot) ->
 
@@ -32,7 +34,7 @@ module.exports = (robot) ->
           title = 'Rep.'
         if content[0].chamber == 'upper'
           title = 'Sen.'
-        msg.send "#{title} #{content[0].full_name} (#{content[0].party})"
+        msg.send "#{content[0].photo_url} #{title} #{content[0].full_name} (#{content[0].party})"
 
   #look up a legislators district - return district  	
   robot.respond /who does (.+)represent\?/i, (msg) ->
