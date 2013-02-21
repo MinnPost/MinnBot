@@ -49,7 +49,20 @@ module.exports = (robot) ->
         if err
           msg.send "OpenStates says #{err}"
         content = JSON.parse(body)
-        msg.send content[0].district
+        district = content[0].district.toUpperCase()
+        #all the issenate business below is minnesota-specific
+        issenate = /^\d+$/.test(district)
+        if issenate
+          if district.length == 1
+            disturl = 'http://www.gis.leg.mn/redist2010/Legislative/L2012/maps/senate/' + '0' + district + '.pdf'
+          else
+            disturl = 'http://www.gis.leg.mn/redist2010/Legislative/L2012/maps/senate/' + district + '.pdf'
+        else
+          if district.length == 2
+            disturl = 'http://www.gis.leg.mn/redist2010/Legislative/L2012/maps/house/' + '0' + district + '.pdf'
+          else
+            disturl = 'http://www.gis.leg.mn/redist2010/Legislative/L2012/maps/house/' + district + '.pdf'
+        msg.send district + ' ' + disturl
         
   #look up bill status by bill number
   robot.respond /bill status (.+)/i, (msg) ->
