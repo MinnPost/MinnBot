@@ -10,5 +10,6 @@
   "github-commits.coffee",
   "isup.coffee",
   "xkcd.coffee",
-  "polite.coffee"
+  "polite.coffee",
+  "giphy.coffee"
 ]
