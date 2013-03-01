@@ -26,6 +26,7 @@ module.exports = (robot) ->
   
   robot.respond /what( is|'s) (["'\w: -_]+)horoscope/i, (msg) ->
     name = msg.match[2].trim()
+    name = name.replace("'s","") 
     msg
     if name is "my"
       user = msg.message.user
@@ -34,7 +35,6 @@ module.exports = (robot) ->
     else if name is robot.name
       user = robot.name
     else
-      name = name.replace("'s","") 
       users = robot.usersForFuzzyName(name)
       if users.length is 1
         user = users[0]      
