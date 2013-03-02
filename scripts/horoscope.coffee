@@ -53,14 +53,14 @@ module.exports = (robot) ->
             if role in signs
               sign = role
           if sign != "unk"
-            url = "https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name=horoscopes&query=select%20*%20from%20%60swdata%60%20where%20sign%3D%22"+sign+"%22"
+            url = "http://cecinestpastom.appspot.com/horoscope/"+sign
             msg
             .http(url)
             .get() (err, res, body) ->
               if err
                 msg.send "Houston we have a problem: #{err}"
               content = JSON.parse(body)
-              msg.send content[0].scope
+              msg.send content.scope
           else
             if user is msg.message.user
               msg.send "Sorry, I don't know your sign"
