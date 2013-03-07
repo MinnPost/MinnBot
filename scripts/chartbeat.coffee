@@ -1,5 +1,5 @@
 # Description:
-#   Some interaction with openstates
+#   Chartbeat integration for robot
 #
 # Dependencies:
 #   None
@@ -9,10 +9,11 @@
 #   HUBOT_CHARTBEAT_SITE
 #
 # Commands:
-#   who represents <district>? - returns legislator representing given district number
+#   how's traffic? - returns current number of people on the site
+#   top pages - list of 5 top pages in order with their current visitor counts
 #
 # Author:
-#   tom
+#   tnehil
 
 apikey = process.env.CHARTBEAT_API_KEY
 mysite = process.env.HUBOT_CHARTBEAT_SITE
