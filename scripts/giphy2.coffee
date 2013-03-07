@@ -14,4 +14,4 @@ module.exports = (robot) ->
         images = response.data.gifs
         if images.length > 0
           image = msg.random images
-        msg.send image.original_url
+          msg.send image.original_url
