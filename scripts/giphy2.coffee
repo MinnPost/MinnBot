@@ -11,7 +11,7 @@ module.exports = (robot) ->
       .query(q)
       .get() (err, res, body) ->
         response = JSON.parse(body)
-        images = response.data.gifs
+        images = response.data
         if images.length > 0
           image = msg.random images
-          msg.send image.original_url
+          msg.send image.thumbnail_url
