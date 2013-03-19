@@ -6,7 +6,7 @@
 
 module.exports = (robot) ->
   robot.respond /(gif|giphy)( me)? (.*)/i, (msg) ->
-    q = q: msg.match[3]
+    q = tag: msg.match[3]
     msg.http('http://giphy.com/api/gifs/search')
       .query(q)
       .get() (err, res, body) ->
