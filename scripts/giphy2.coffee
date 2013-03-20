@@ -14,4 +14,4 @@ module.exports = (robot) ->
         images = response.data
         if images.length > 0
           image = msg.random images
-          msg.send image.thumbnail_url
+          msg.send image.image_fixed_height_url
