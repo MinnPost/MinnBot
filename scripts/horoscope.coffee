@@ -49,6 +49,7 @@ module.exports = (robot) ->
           sign = "unk"
           for role in roles
             role = role.replace("a ","")
+            role = role.replace(/:/g,"")
             role = role.toLowerCase()
             if role in signs
               sign = role
