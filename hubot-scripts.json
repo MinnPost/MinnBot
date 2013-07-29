@@ -1,5 +1,5 @@
 [
-  "redis-brain.coffee",
+  //"redis-brain.coffee",
   "tweet.coffee", 
   "shipit.coffee", 
   "animal.coffee", 
@@ -10,5 +10,6 @@
   "github-commits.coffee",
   "isup.coffee",
   "xkcd.coffee",
-  "polite.coffee"
+  "polite.coffee",
+  "emoji.coffee"
 ]
