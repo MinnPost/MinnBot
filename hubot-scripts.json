@@ -1,5 +1,5 @@
 [
-  //"redis-brain.coffee",
+  "redis-brain.coffee",
   "tweet.coffee", 
   "shipit.coffee", 
   "animal.coffee", 
