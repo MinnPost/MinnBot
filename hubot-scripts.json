@@ -11,5 +11,6 @@
   "isup.coffee",
   "xkcd.coffee",
   "polite.coffee",
-  "emoji-me.coffee"
+  "emoji-me.coffee",
+  "foass.coffee"
 ]

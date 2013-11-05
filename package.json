@@ -1,33 +1,33 @@
 {
-  "name":        "MinnBot",
-  "version":     "2.2.0",
-  "author":      "MinnPost",
-  "keywords":    "github hubot campfire bot",
+  "name": "MinnBot",
+  "version": "2.2.0",
+  "author": "MinnPost",
+  "keywords": "github hubot campfire bot",
   "description": "A simple helpful Robot for your Company",
-  "licenses":     [{
-    "type":       "MIT",
-    "url":        "http://github.com/github/hubot/raw/master/LICENSE"
-  }],
-
-  "repository" : {
-    "type" : "git",
-    "url" : "http://github.com/minnpost/MinnPost.git"
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/github/hubot/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/minnpost/MinnPost.git"
   },
-
   "dependencies": {
-    "hubot": "2.4.0",
-    "hubot-scripts": "2.4.1",
+    "hubot": "~2.6.3",
+    "hubot-scripts": "2.5.4",
     "optparse": "1.0.3",
     "htmlparser": "1.7.6",
     "soupselect": "0.2.0",
     "url": "",
     "querystring": "",
     "gitio": "1.0.1",
-    "xml2js": ""
+    "xml2js": "",
+    "ntwitter": "~0.5.0"
   },
   "engines": {
     "node": "0.8.x",
-    "npm":  "1.1.x"
+    "npm": "1.1.x"
   }
 }
-
