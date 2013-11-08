@@ -24,7 +24,8 @@
     "querystring": "",
     "gitio": "1.0.1",
     "xml2js": "",
-    "ntwitter": "~0.5.0"
+    "ntwitter": "~0.5.0",
+    "yelp": "~0.1.1"
   },
   "engines": {
     "node": "0.8.x",
