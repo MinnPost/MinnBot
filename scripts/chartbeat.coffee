@@ -18,7 +18,7 @@
 apikey = process.env.CHARTBEAT_API_KEY
 mysite = process.env.HUBOT_CHARTBEAT_SITE
 
-holds = [["Crappy.",0],["Meh.",300],["So-so",400],["Not bad",500],["Great",600],["Booming!",700],["The servers are melting.",1000]]
+holds = [["Crappy.",0],["Meh.",300],["So-so.",400],["Not bad.",500],["Great!",600],["Booming!",700],["The servers are melting.",1000]]
 
 module.exports = (robot) ->
 
