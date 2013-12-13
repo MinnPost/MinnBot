@@ -13,5 +13,6 @@
   "polite.coffee",
   "emoji-me.coffee",
   "foass.coffee",
-  "yelp.coffee"
+  "yelp.coffee",
+  "sudo.coffee"
 ]
