@@ -24,7 +24,7 @@ module.exports = (robot) ->
 
   signs = ['aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarius','capricorn','aquarius','pisces']
   
-  robot.respond /what( is|'s) (["'\w: -_]+)horoscope/i, (msg) ->
+  robot.respond /what( is|'s|s) (["'\w: -_]+)horoscope/i, (msg) ->
     name = msg.match[2].trim()
     name = name.replace("'s","") 
     msg
@@ -35,7 +35,7 @@ module.exports = (robot) ->
     else if name is robot.name
       user = robot.name
     else
-      users = robot.usersForFuzzyName(name)
+      users = robot.brain.usersForFuzzyName(name)
       if users.length is 1
         user = users[0]      
       else
@@ -49,6 +49,7 @@ module.exports = (robot) ->
           sign = "unk"
           for role in roles
             role = role.replace("a ","")
+            role = role.replace("an ","")
             role = role.replace(/:/g,"")
             role = role.toLowerCase()
             if role in signs
