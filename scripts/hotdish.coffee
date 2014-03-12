@@ -11,14 +11,14 @@
 #   hubot hotdish me -> creates a random hotdish
 #
 # Author:
-#   tom
+#   tnehil
 
 fats =['3 T butter','3 T olive oil','3 T margarine']
 aromatics = ['2 cups thinly sliced leeks','2 cups chopped onions','2 cups fine mirepoix']
-frozen_vegetables = ['corn','vegetable medley','carrots','green beans','peas']
+frozen_vegetables = ['corn','vegetable medley','carrots','green beans','peas','pearl onions']
 binders = ['2 cups bechamel','2 cups brown gravy','2 cans cream of mushroom soup']
-proteins = ['cans of tuna','1# ground beef','1# ground bison','2 cups diced tofu']
-starches  = ['1# egg noodles','2 c wild rice']
+proteins = ['cans of tuna','1# ground beef','1# ground bison','2 cups diced tofu','2 14oz cans kidney beans (drained and rinsed)']
+starches  = ['1# egg noodles','2 c wild rice','2# frozen hash browns']
 toppings = ['canned fried onions','tater tots','breadcrumbs']
 
 
