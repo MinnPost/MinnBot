@@ -4,7 +4,7 @@
 # Dependencies:
 #   None
 #
-# Configuration: 
+# Configuration:
 #
 # Commands:
 #   what's my horoscope? - gives you your horoscope if hubot knows your sign (via roles)
@@ -23,10 +23,9 @@ robotfortunes = ["Robots don't believe in that stuff",
 module.exports = (robot) ->
 
   signs = ['aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarius','capricorn','aquarius','pisces']
-  
-  robot.respond /what( is|'s|s) (["'\w: -_]+)horoscope/i, (msg) ->
-    name = msg.match[2].trim()
-    name = name.replace("'s","") 
+
+  robot.respond /what[s|'s| is]* (\w+)['s]* horoscope/i, (msg) ->
+    name = msg.match[1]
     msg
     if name is "my"
       user = msg.message.user
@@ -37,7 +36,7 @@ module.exports = (robot) ->
     else
       users = robot.brain.usersForFuzzyName(name)
       if users.length is 1
-        user = users[0]      
+        user = users[0]
       else
         user = false
     if user
@@ -65,12 +64,12 @@ module.exports = (robot) ->
               msg.send content.scope
           else
             if user is msg.message.user
-              msg.send "Sorry, I don't know your sign"
+              msg.send "Sorry, I don't know your sign."
             else
               msg.send "Sorry, I don't know #{user.name}'s sign"
         else
           if user is msg.message.user
-            msg.send "Sorry, I don't know your sign"
+            msg.send "Sorry, I don't know your sign."
           else
             msg.send "Sorry, I don't know #{user.name}'s sign"
     else
