@@ -24,7 +24,7 @@ module.exports = (robot) ->
 
   signs = ['aries','taurus','gemini','cancer','leo','virgo','libra','scorpio','sagittarius','capricorn','aquarius','pisces']
 
-  robot.respond /what[s|'s| is]* (\w+)['s]* horoscope/i, (msg) ->
+  robot.respond /what[s|'s| is|’s]* (\w+)['s|’s]* horoscope/i, (msg) ->
     name = msg.match[1]
     msg
     if name is "my"
