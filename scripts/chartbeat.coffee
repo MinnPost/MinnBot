@@ -23,7 +23,7 @@ holds = [["Crappy.",0],["Meh.",300],["So-so.",400],["Not bad.",500],["Great!",60
 module.exports = (robot) ->
 
   #get current traffic
-  robot.respond /how('s| is) traffic/i, (msg) ->
+  robot.respond /how('s| is|’s|s) traffic/i, (msg) ->
       msg
       .http("http://api.chartbeat.com/live/quickstats/v3/")
       .query(apikey: apikey, host:mysite)
@@ -36,7 +36,7 @@ module.exports = (robot) ->
           if traffic > i[1]
             threshold = i[0]
         msg.send "#{threshold} #{traffic} peeps on #{mysite}"
-        
+
   #get top pages
   robot.respond /top pages/i, (msg) ->
     msg
