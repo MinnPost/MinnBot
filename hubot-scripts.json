@@ -3,7 +3,7 @@
   "tweet.coffee",
   "shipit.coffee",
   "animal.coffee",
-  "beerme.coffee", 
+  "beerme.coffee",
   "botsnack.coffee",
   "commandlinefu.coffee",
   "github-commits.coffee",
@@ -13,5 +13,6 @@
   "emoji-me.coffee",
   "foass.coffee",
   "yelp.coffee",
-  "sudo.coffee"
+  "sudo.coffee",
+  "spot.coffee"
 ]
