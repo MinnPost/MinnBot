@@ -13,6 +13,5 @@
   "emoji-me.coffee",
   "foass.coffee",
   "yelp.coffee",
-  "sudo.coffee",
-  "spot.coffee"
+  "sudo.coffee"
 ]
