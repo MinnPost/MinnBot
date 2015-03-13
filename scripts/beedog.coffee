@@ -21,8 +21,6 @@ responder = (msg) ->
 
 module.exports = (robot) ->
 
-  robot.respond /beedog me/i, responder
-  
   robot.hear /beedog/i, responder
 
   robot.hear /bee dog/i, responder
