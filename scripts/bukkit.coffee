@@ -20,7 +20,7 @@ htmlparser = require "htmlparser"
 Select     = require("soupselect").select
 
 # If false, you must address your robot directly.
-ROBOT_IS_REALLY_ATTENTIVE = true
+ROBOT_IS_REALLY_ATTENTIVE = false
 
 module.exports = (robot) ->
   bukkit_bucket = []
