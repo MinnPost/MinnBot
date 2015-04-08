@@ -21,6 +21,7 @@
     "htmlparser": "1.7.6",
     "soupselect": "0.2.0",
     "url": "",
+    "mathjs": "~1.5.0",
     "querystring": "",
     "gitio": "1.0.1",
     "xml2js": "",
