@@ -14,5 +14,5 @@
 #   jonathanstegall
 
 module.exports = (robot) ->
-  robot.hear /(flip tables|fight the power)\b/i, (msg) ->
+  robot.hear /(flip tables|fight the power|#comment)\b/i, (msg) ->
       msg.send "(╯°□°）╯︵ ┻━┻"
