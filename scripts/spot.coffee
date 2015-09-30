@@ -220,8 +220,11 @@ module.exports = (robot) ->
 
   robot.respond /playing\?/i, (message) ->
     spotRequest message, '/playing', 'get', {}, (err, res, body) ->
+      if body.indexOf("The Smiths") > -1
+        body = body + " :strongsad:"
       message.send("#{URL}/playing.png")
       message.send(":notes:  #{body}")
+
 
   robot.respond /album art\??/i, (message) ->
     spotRequest message, '/playing', 'get', {}, (err, res, body) ->
