@@ -1,17 +1,19 @@
 # Description:
-#   None
+#   StatusCAT!
 #
 # Dependencies:
-#   None
+#   Cats and statuses
 #
 # Configuration:
 #   None
 #
 # Commands:
 #   hubot statuscat me -> displays random http status code cat
+#   <http_code> me -> displays status cat for that http code
 #
 # Author:
-#   tom
+#   Tom Nehil
+#   (added in from Alan Palazzolo)
 
 images = [
   [100, "http://farm8.staticflickr.com/7162/6512768893_a821929823.jpg"],
@@ -69,15 +71,15 @@ images = [
 module.exports = (robot) ->
 
   robot.respond /statuscat me/i, (msg) ->
-  	cat = msg.random images
-  	msg.send cat[1]
+    cat = msg.random images
+    msg.send cat[1]
 
   robot.respond /(\b[0-9]{3}\b) me/i, (msg) ->
-  	code = msg.match[1].trim()
-  	for i in images
-  	  if i[0]+"" == code
-  	    cat = i[1]
-  	if cat
-  	  msg.send cat
-  	else
-  	  msg.send "Sorry, don't know what #{code} is"
+    code = msg.match[1].trim()
+    for i in images
+      if i[0]+"" == code
+        cat = i[1]
+    if cat
+      msg.send cat
+    else
+      msg.send "Sorry, don't know what #{code} is"
