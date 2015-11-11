@@ -2,7 +2,7 @@
 #   Fetches a matching image from Ethan Marcotte's legendary bukk.it
 #
 # Dependencies:
-#   bukkit
+#   bukkit.coffee
 #
 # Configuration:
 #   None
@@ -12,8 +12,6 @@
 #
 # Author:
 #   jonathanstegall
-
-bukkit = require("bukkit")
 
 module.exports = (robot) ->
   robot.hear /(nope)\b/i, (msg) ->
