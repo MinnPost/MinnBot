@@ -22,7 +22,7 @@
     "hubot-darts": "1.0.x",
     "hubot-redis-brain": "0.0.3",
     "hubot-scripts": "2.5.4",
-    "hubot-slack": "~2.0.4",
+    "hubot-slack": "^3.4.1",
     "mathjs": "~1.5.0",
     "ntwitter": "~0.5.0",
     "optparse": "1.0.3",
