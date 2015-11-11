@@ -91,3 +91,6 @@ module.exports = (robot) ->
     bukkit_bucket = []
     bukkits()
     msg.reply "All thy bukkits have been reloaded."
+
+  robot.on "autobukkit", (msg) ->
+    fetch_me_a_bukkit(msg)
