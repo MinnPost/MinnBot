@@ -15,3 +15,14 @@ module.exports = (robot) ->
         message += response.that
         message += "."
         msg.send message
+
+  robot.respond /let('|’)?s pivot/i, (msg) ->
+    msg.http('http://itsthisforthat.com/api.php?json')
+      .get() (err, res, body) ->
+        response = JSON.parse(body)
+        message = "Okay. From now on we’re "
+        message += response.this
+        message += " for "
+        message += response.that
+        message += "."
+        msg.send message
