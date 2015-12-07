@@ -17,10 +17,8 @@ responder = (msg) ->
   else
     out = rand.toString()
 
-  msg.send "http://beedogs.com/index_files/image#{out}.jpg"
+  msg.send "https://web.archive.org/web/20150201140532/http://beedogs.com/index_files/image#{out}.jpg"
 
 module.exports = (robot) ->
-
   robot.hear /beedog/i, responder
-
   robot.hear /bee dog/i, responder
