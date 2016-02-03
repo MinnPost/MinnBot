@@ -18,7 +18,7 @@
     "gitio2": "2.0.0",
     "htmlparser": "1.7.7",
     "hubot": "~2.16.0",
-    "hubot-business-cat": "^1.4.1",
+    "hubot-business-cat": "^1.4.2",
     "hubot-darts": "1.0.x",
     "hubot-redis-brain": "0.0.3",
     "hubot-slack": "^3.4.1",
