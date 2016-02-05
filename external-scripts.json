@@ -1,4 +1,5 @@
 [
   "hubot-business-cat",
+  "hubot-frinkiac",
   "hubot-redis-brain"
 ]
