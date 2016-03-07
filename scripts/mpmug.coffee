@@ -18,4 +18,5 @@ module.exports = (robot) ->
         q = msg.match[1]
         base_url = 'https://mpmugs.herokuapp.com/?q='
         mug = base_url + encodeURIComponent(q)
+          .replace(/\./g, '%2E')
         msg.send mug
