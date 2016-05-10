@@ -15,3 +15,5 @@ module.exports = (robot) ->
         if images.length > 0
           image = msg.random images
           msg.send image.images.fixed_height.url
+        else
+          msg.send "No results for " + q + ". http://wil.to/_/finn-nope.gif"
