@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   reply to Drupal with MORE LIKE STUPAL
+#   reply to things with SNARKY THINGS
 #
 # Author:
 #   jonathanstegall
@@ -16,3 +16,5 @@
 module.exports = (robot) ->
   robot.hear /(drupal)\b/i, (msg) ->
       msg.send "MORE LIKE STUPAL"
+  robot.hear /(salesforce)\b/i, (msg) ->
+      msg.send "MORE LIKE SALES FARCE"
