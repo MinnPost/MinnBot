@@ -8,7 +8,7 @@
 module.exports = (robot) ->
 
   robot.hear /.*/i, (msg)->
-    room = msg.message.room
+    room = robot.messageRoom
     txt = msg.match[0]
     if txt.indexOf('say that again') != -1
       msg.send robot.brain.lastmsg.room
