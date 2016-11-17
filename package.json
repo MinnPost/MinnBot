@@ -18,7 +18,7 @@
     "gitio2": "2.0.0",
     "htmlparser": "1.7.7",
     "hubot": "~2.16.0",
-    "hubot-business-cat": "^1.5.0",
+    "hubot-business-cat": "^1.5.1",
     "hubot-darts": "1.0.x",
     "hubot-frinkiac": "1.1.0",
     "hubot-movie": "^0.1.0",
