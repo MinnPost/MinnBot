@@ -20,6 +20,7 @@
     "hubot": "~2.19.0",
     "hubot-business-cat": "^1.5.8",
     "hubot-darts": "1.0.4",
+    "hubot-dj": "^0.1.1",
     "hubot-frinkiac": "2.2.0",
     "hubot-isup": "^1.0.2",
     "hubot-movie": "^0.1.0",
