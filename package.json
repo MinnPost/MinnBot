@@ -37,8 +37,7 @@
     "underscore": "1.8.3",
     "underscore.string": "3.3.4",
     "url": "",
-    "xml2js": "",
-    "yelp": "~0.2.0"
+    "xml2js": ""
   },
   "engines": {
     "node": "6.9.1"
