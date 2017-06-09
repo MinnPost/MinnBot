@@ -1,6 +1,9 @@
 [
   "hubot-business-cat",
   "hubot-frinkiac",
+  "hubot-isup",
   "hubot-redis-brain",
   "hubot-movie"
+  "hubot-shipit",
+  "hubot-xkcd"
 ]
