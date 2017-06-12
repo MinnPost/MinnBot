@@ -20,7 +20,6 @@
     "hubot": "~2.19.0",
     "hubot-business-cat": "^1.5.8",
     "hubot-darts": "1.0.4",
-    "hubot-dj": "https://github.com/MinnPost/hubot-dj.git",
     "hubot-dotenv": "^1.0.0",
     "hubot-frinkiac": "2.2.0",
     "hubot-isup": "^1.0.2",
