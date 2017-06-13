@@ -28,8 +28,6 @@
 #   hubot play #n - Play the nth track from the last search results
 #   hubot album #n - Pull up album info for the nth track in the last search results
 #   hubot last find - Pulls up the most recent find query
-#   hubot airplay <Apple TV> - Tell Spot to broadcast to the specified Apple TV.
-#   hubot spot - Start or restart the Spotify client.
 #   hubot queue #n - Queues a song to play up when the current song is done
 #   hubot queue list - Shows current song titles in the queue
 #
@@ -220,36 +218,24 @@ module.exports = (robot) ->
 
   robot.respond /playing\?/i, (message) ->
     spotRequest message, '/playing', 'get', {}, (err, res, body) ->
-      if body.indexOf("The Smiths") > -1
-        body = body + " :strongsad:"
-      message.send("#{URL}/playing.png")
       message.send(":notes:  #{body}")
-
-
-  robot.respond /album art\??/i, (message) ->
-    spotRequest message, '/playing', 'get', {}, (err, res, body) ->
-      message.send("#{URL}/playing.png")
 
   robot.respond /volume\?/i, (message) ->
     spotRequest message, '/volume', 'get', {}, (err, res, body) ->
-      message.send("Spot volume is #{body}. :mega:")
+      message.send("Volume is currently set to #{body}. :mega:")
 
   robot.respond /volume\+/i, (message) ->
     spotRequest message, '/bumpup', 'put', {}, (err, res, body) ->
-      message.send("Spot volume bumped to #{body}. :mega:")
+      message.send("Volume bumped to #{body}. :mega:")
 
   robot.respond /volume\-/i, (message) ->
     spotRequest message, '/bumpdown', 'put', {}, (err, res, body) ->
-      message.send("Spot volume bumped down to #{body}. :mega:")
-
-  robot.respond /mute/i, (message) ->
-    spotRequest message, '/mute', 'put', {}, (err, res, body) ->
-      message.send("#{body} :mute:")
+      message.send("Volume bumped down to #{body}. :mega:")
 
   robot.respond /volume (.*)/i, (message) ->
     params = {volume: message.match[1]}
     spotRequest message, '/volume', 'put', params, (err, res, body) ->
-      message.send("Spot volume set to #{body}. :mega:")
+      message.send("Volume set to #{body}. :mega:")
 
   robot.respond /play (.*)/i, (message) ->
     playNum = message.match[1].match(/#(\d+)\s*$/)
@@ -272,20 +258,21 @@ module.exports = (robot) ->
     spotRequest message, '/find', 'post', params, (err, res, body) ->
       message.send(":small_blue_diamond: #{body}")
 
-  robot.respond /album .(\d+)/i, (message) ->
-    r = getLastResultsRelevantToUser(robot, message.message.user)
-    n = parseInt(message.match[1], 10) - 1
-    if (!r || !r[n])
-      message.send(":small_blue_diamon: out of bounds...")
-      return
-    spotRequest message, '/album-info', 'get', {'uri' : r[n].album.uri}, (err, res, body) ->
-      album = JSON.parse(body)
-      album.tracks.forEach((track) ->
-        track.album = track.album || {}
-        track.album.uri = r[n].album.uri
-      )
-      recordUserQueryResults(message, album.tracks)
-      message.send(renderAlbum album)
+  # Maybe
+  # robot.respond /album .(\d+)/i, (message) ->
+  #   r = getLastResultsRelevantToUser(robot, message.message.user)
+  #   n = parseInt(message.match[1], 10) - 1
+  #   if (!r || !r[n])
+  #     message.send(":small_blue_diamon: out of bounds...")
+  #     return
+  #   spotRequest message, '/album-info', 'get', {'uri' : r[n].album.uri}, (err, res, body) ->
+  #     album = JSON.parse(body)
+  #     album.tracks.forEach((track) ->
+  #       track.album = track.album || {}
+  #       track.album.uri = r[n].album.uri
+  #     )
+  #     recordUserQueryResults(message, album.tracks)
+  #     message.send(renderAlbum album)
 
   robot.respond /(how much )?(time )?(remaining|left)\??$/i, (message) ->
     spotRequest message, '/how-much-longer', 'get', {}, (err, res, body) ->
@@ -301,7 +288,7 @@ module.exports = (robot) ->
 
   robot.respond /find ?(\d+)? music (.*)/i, (message) ->
     limit = message.match[1] || 3
-    params = {q: message.match[2]}
+    params = {q: message.match[2], limit: limit}
     spotRequest message, '/query', 'get', params, (err, res, body) ->
       try
         data = JSON.parse(body)
@@ -322,34 +309,9 @@ module.exports = (robot) ->
     recordUserQueryResults(message, data)
     showResults(robot, message, data)
 
-  robot.respond /say (.*)/i, (message) ->
-    what = message.match[1]
-    params = {what: what}
-    spotRequest message, '/say', 'put', params, (err, res, body) ->
-      message.send(what)
-
-  robot.respond /say me/i, (message) ->
-    message.send('no way ' + message.message.user.name);
-
   robot.respond /(.*) says.*turn.*down.*/i, (message) ->
     name = message.match[1]
     message.send("#{name} says, 'Turn down the music and get off my lawn!' :bowtie:")
     params = {volume: 15}
     spotRequest message, '/volume', 'put', params, (err, res, body) ->
       message.send("Spot volume set to #{body}. :mega:")
-
-  robot.respond /spot version\??/i, (message) ->
-    message.send(':small_blue_diamond: Well, ' + message.message.user.name + ', my Spot version is presently ' + VERSION)
-
-  robot.respond /airplay (.*)/i, (message) ->
-    params = {atv: message.match[1]}
-    spotRequest message, '/airplay', 'put', params, (err, res, body) ->
-      message.send("#{body} :mega:")
-
-  robot.respond /spot/i, (message) ->
-    spotRequest message, '/spot', 'put', {}, (err, res, body) ->
-      message.send(body)
-
-  robot.respond /respot/i, (message) ->
-    spotRequest message, '/respot', 'put', {}, (err, res, body) ->
-      message.send(body)
