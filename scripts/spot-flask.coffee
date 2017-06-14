@@ -145,7 +145,7 @@ queueTrack = (track, qL, message) ->
 
 playNextTrackInQueue = (robot) ->
   track = robot.brain.data.ql.shift()
-  robot.messageRoom(MENTION_ROOM, "Switching to " + track.name)
+  robot.messageRoom(MENTION_ROOM, "Switching to " + track.name + " by " + track.artists[0].name)
   robot.http(URL+'/play-uri')
     .query({'uri' : track.uri})['post']() (err,res,body) ->
       if (err)
