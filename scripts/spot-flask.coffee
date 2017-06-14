@@ -36,6 +36,8 @@ VERSION = '1.5'
 
 URL = process.env.HUBOT_SPOT_URL || "http://localhost:5051"
 MENTION_ROOM = process.env.HUBOT_SPOT_MENTION_ROOM || "#general"
+playingFromQueue = false
+playlistID = process.env.SPOTIFY_PLAYLIST_ID
 
 spotRequest = (message, path, action, options, callback) ->
   message.http("#{URL}#{path}")
@@ -158,11 +160,23 @@ module.exports = (robot) ->
 
   playQueue = (robot) ->
     if robot.brain.data.ql && robot.brain.data.ql.length > 0
+      playingFromQueue = true
       robot.http(URL+'/seconds-left')
         .get() (err, res, body) ->
           seconds_left = parseFloat(body)
           if seconds_left < 3
             playNextTrackInQueue(robot)
+    if robot.brain.data.ql && robot.brain.data.ql.length == 0 && playingFromQueue
+      robot.http(URL+'/seconds-left')
+        .get() (err, res, body) ->
+          seconds_left = parseFloat(body)
+          if seconds_left < 3
+            playingFromQueue = false
+            robot.http(URL+'/play-uri')
+              .query({'uri' : playlistID})['post']() (err,res,body) ->
+                if (err)
+                  console.log "Error switching back to playlist" + err
+                sleep(4000)
     setTimeout (->
       playQueue(robot)
     ), 1000
