@@ -1,5 +1,5 @@
 # Description:
-#   Control Spot from campfire. https://github.com/minton/spot
+#   Control spoti-flask (a Flask port of the Sinatra-powered Spot - https://github.com/minton/spot) from Slack. https://github.com/tnehil/spoti-flask
 #
 # Dependencies:
 #   None
@@ -11,8 +11,8 @@
 # Commands:
 #   hubot play! - Plays current playlist or song.
 #   hubot pause - Pause the music.
-#   hubot play next - Plays the next song.
-#   hubot play back - Plays the previous song.
+#   hubot next - Plays the next song.
+#   hubot back - Plays the previous song.
 #   hubot playing? - Returns the currently-played song.
 #   hubot play <song> - Play a particular song. This plays the first most popular result.
 #   hubot query <song> - Searches Spotify for a particular song, shows what "Play <song>" would play.
@@ -22,19 +22,17 @@
 #   hubot volume- - Bumps the volume down.
 #   hubot mute - Sets the volume to 0.
 #   hubot [name here] says turn it down - Sets the volume to 15 and blames [name here].
-#   hubot say <message> - Tells hubot to read a message aloud.
 #   hubot how much longer? - Hubot tells you how much is left on the current track
 #   hubot find x music <search> - Searches and pulls up x (or 3) most popular matches
 #   hubot play #n - Play the nth track from the last search results
-#   hubot album #n - Pull up album info for the nth track in the last search results
 #   hubot last find - Pulls up the most recent find query
 #   hubot queue #n - Queues a song to play up when the current song is done
 #   hubot queue list - Shows current song titles in the queue
 #
 # Authors:
-#   mcminton, <Shad Downey> github:andromedado, Eric Stiens - @mutualarising
+#   Tom Nehil - github:tnehil, Original: mcminton, <Shad Downey> github:andromedado, Eric Stiens - @mutualarising
 
-VERSION = '1.4'
+VERSION = '1.5'
 
 URL = process.env.HUBOT_SPOT_URL || "http://localhost:5051"
 MENTION_ROOM = process.env.HUBOT_SPOT_MENTION_ROOM || "#general"
