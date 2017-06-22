@@ -135,6 +135,16 @@ playTrack = (track, message) ->
     if (err)
       message.send(":flushed: " + err)
 
+addTrackToPlaylist = (track, message) ->
+  if not track or not track.uri
+    message.send("Something has gone wrong. :flushed:")
+    return
+  spotRequest message, '/add-to-playlist', 'post', {'track_uri': track.uri, 'playlist_uri': playlistID}, (err, res, body)->
+    if (err)
+      message.send(":flushed: " + err)
+    else
+      message.send("Added '#{track.name}' to the playlist.")
+
 queueTrack = (track, qL, message) ->
   unless track && track.uri
     message.send("Sorry, couldn't add that to the queue")
@@ -270,6 +280,15 @@ module.exports = (robot) ->
     spotRequest message, '/find', 'post', params, (err, res, body) ->
       message.send(":small_blue_diamond: #{body}")
 
+  robot.respond /add (.*) to the playlist/i, (message) ->
+    playNum = message.match[1].match(/#(\d+)\s*$/)
+    if (playNum)
+      r = getLastResultsRelevantToUser(robot, message.message.user)
+      i = parseInt(playNum[1], 10) - 1
+      if (r && r[i])
+        addTrackToPlaylist(r[i], message)
+        return
+      message.send("Sorry, I can't do it. Something went terribly wrong. :flushed:")
   # Maybe
   # robot.respond /album .(\d+)/i, (message) ->
   #   r = getLastResultsRelevantToUser(robot, message.message.user)
