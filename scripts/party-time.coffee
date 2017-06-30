@@ -15,4 +15,4 @@
 
 module.exports = (robot) ->
   robot.hear /(party time)\b/i, (msg) ->
-      msg.send "http://floops.io/party-time.gif"
+      msg.send "https://web.archive.org/web/20160331190443/http://floops.io/party-time.gif"
