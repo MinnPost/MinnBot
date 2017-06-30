@@ -14,5 +14,5 @@
 #   jonathanstegall
 
 module.exports = (robot) ->
-  robot.hear /(delete| |your|ur| |account|acct)\b/i, (msg) ->
+  robot.hear /(delete your|ur| account)\b/i, (msg) ->
       msg.send "https://cdn.meme.am/instances/500x/64422613.jpg"
