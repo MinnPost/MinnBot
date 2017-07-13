@@ -25,6 +25,7 @@
 #   hubot how much longer? - Hubot tells you how much is left on the current track
 #   hubot find x music <search> - Searches and pulls up x (or 3) most popular matches
 #   hubot play #n - Play the nth track from the last search results
+#   hubot add #n to the playlist - Add the nth track from the list to the current playlist
 #   hubot last find - Pulls up the most recent find query
 #   hubot queue #n - Queues a song to play up when the current song is done
 #   hubot queue list - Shows current song titles in the queue
