@@ -18,6 +18,7 @@
     "gitio2": "3.1.0",
     "htmlparser": "1.7.7",
     "hubot": "~2.19.0",
+    "hubot-birthday-reminder": "^0.1.1",
     "hubot-business-cat": "^1.5.8",
     "hubot-darts": "1.0.4",
     "hubot-dotenv": "^1.0.0",
