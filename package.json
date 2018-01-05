@@ -17,7 +17,6 @@
   "dependencies": {
     "complex-js": "^5.0.0",
     "complex.js": "^2.0.4",
-    "dezalgo": "^1.0.3",
     "fraction.js": "^4.0.3",
     "gitio2": "3.1.0",
     "htmlparser": "1.7.7",
