@@ -7,6 +7,5 @@
   "hubot-redis-brain",
   "hubot-shipit",
   "hubot-xkcd",
-  "hubot-heroku-keepalive",
   "hubot-birthday-reminder"
 ]
