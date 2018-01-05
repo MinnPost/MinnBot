@@ -4,12 +4,7 @@
   "author": "MinnPost",
   "keywords": "github hubot campfire bot",
   "description": "A simple helpful Robot for your Company",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://github.com/github/hubot/raw/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "http://github.com/minnpost/minnbot.git"
@@ -17,12 +12,13 @@
   "dependencies": {
     "complex-js": "^5.0.0",
     "complex.js": "^2.0.4",
-    "fraction.js": "^4.0.3",
+    "dezalgo": "^1.0.3",
+    "fraction.js": "^4.0.4",
     "gitio2": "3.1.0",
     "htmlparser": "1.7.7",
     "hubot": "~2.19.0",
     "hubot-birthday-reminder": "github:MinnPost/hubot-birthday-reminder",
-    "hubot-business-cat": "^1.5.10",
+    "hubot-business-cat": "^1.5.14",
     "hubot-calculator": "^0.4.0",
     "hubot-darts": "1.0.4",
     "hubot-dotenv": "^1.0.0",
@@ -34,13 +30,15 @@
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.1",
     "hubot-slack": "^4.4.0",
-    "hubot-xkcd": "0.0.4",
+    "hubot-xkcd": "0.0.5",
     "hubot-yelp": "^0.2.1",
-    "mathjs": "^3.16.4",
+    "mathjs": "^3.18.1",
     "ntwitter": "~0.5.0",
     "optparse": "1.0.5",
     "passport-spotify": "^0.3.1",
     "querystring": "",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
     "soupselect": "0.2.0",
     "underscore": "1.8.3",
     "underscore.string": "3.3.4",
