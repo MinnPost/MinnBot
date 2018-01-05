@@ -23,6 +23,7 @@
     "hubot-darts": "1.0.4",
     "hubot-dotenv": "^1.0.0",
     "hubot-frinkiac": "2.2.0",
+    "hubot-heroku-keepalive": "^1.0.3",
     "hubot-isup": "^1.0.2",
     "hubot-movie": "^0.1.0",
     "hubot-redis-brain": "0.0.4",
