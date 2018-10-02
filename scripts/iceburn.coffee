@@ -15,4 +15,4 @@
 
 module.exports = (robot) ->
   robot.hear /ice( |-)?burn\b/i, (msg) ->
-    msg.send "https://i.imgur.com/5DsOPcl.gif"
+    msg.send "https://web.archive.org/web/20170324000457/https://i.imgur.com/5DsOPcl.gif"
