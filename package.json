@@ -47,7 +47,7 @@
     "xml2js": "^0.4.22"
   },
   "engines": {
-    "node": "6.11.1"
+    "node": "12.x"
   },
   "scripts": {
     "start": "hubot-dotenv -n hubot"
