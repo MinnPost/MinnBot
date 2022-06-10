@@ -2,7 +2,6 @@
   "name": "MinnBot",
   "version": "2.2.0",
   "author": "MinnPost",
-  "keywords": "github hubot slack bot",
   "description": "A simple helpful Robot for your Company",
   "license": "MIT",
   "repository": {
@@ -10,15 +9,14 @@
     "url": "http://github.com/minnpost/minnbot.git"
   },
   "dependencies": {
-    "complex-js": "^5.0.0",
-    "complex.js": "^2.0.11",
-    "dezalgo": "^1.0.3",
-    "fraction.js": "^4.0.13",
-    "gitio2": "3.1.0",
+    "complex-js": "^7.1.1",
+    "dezalgo": "^1.0.4",
+    "fraction.js": "^4.2.0",
+    "gitio": "2.3.0",
     "htmlparser": "1.7.7",
     "hubot": "~3.3.2",
     "hubot-birthday-reminder": "github:MinnPost/hubot-birthday-reminder",
-    "hubot-business-cat": "^1.5.15",
+    "hubot-business-cat": "^1.5.16",
     "hubot-calculator": "^0.4.0",
     "hubot-darts": "1.0.4",
     "hubot-dotenv": "^1.0.0",
@@ -29,24 +27,24 @@
     "hubot-redis-brain": "1.0.0",
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.1",
-    "hubot-slack": "^4.8.1",
+    "hubot-slack": "^4.10.0",
     "hubot-xkcd": "0.0.5",
-    "mathjs": "^8.1.1",
-    "npm-check-updates": "^10.2.5",
+    "mathjs": "^10.6.1",
+    "npm-check-updates": "^13.1.2",
     "ntwitter": "~0.5.0",
     "optparse": "1.0.5",
-    "passport-spotify": "^1.1.0",
+    "passport-spotify": "^2.0.0",
     "querystring": "",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "soupselect": "0.2.0",
-    "underscore": "1.12.0",
-    "underscore.string": "3.3.5",
+    "underscore": "1.13.4",
+    "underscore.string": "3.3.6",
     "url": "",
     "xml2js": "^0.4.23"
   },
   "engines": {
-    "node": "15.x"
+    "node": "18.x"
   },
   "scripts": {
     "start": "hubot-dotenv -n hubot"
